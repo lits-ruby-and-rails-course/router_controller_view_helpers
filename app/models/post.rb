@@ -10,5 +10,6 @@
 #
 
 class Post < ActiveRecord::Base
+  acts_as_likable
   has_many :comments
 end
