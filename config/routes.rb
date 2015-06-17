@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
-  resources :likes
-  resources :posts do
-    resources :comments
+
+  concern :likable do
+    resources :likes
   end
+
+  resources :posts, concerns: [:likable] do
+    resources :comments, concerns: [:likable]
+  end
+
   root 'posts#index'
 end
