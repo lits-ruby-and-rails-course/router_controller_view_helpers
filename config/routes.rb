@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   concern :likable do
-    resources :likes
+    resources :likes, only: [:create]
   end
 
   resources :posts, concerns: [:likable] do
