@@ -2,7 +2,11 @@
 
 <p>
   <strong>Title:</strong>
-  <%= @post.title %>
+  <%= @post.title %> | <%= link_to "Like!", [@post, Like.new], method: :post, class: "like" %>
+</p>
+
+<p>
+  <small>"<%= @post.title %>" post has <%= count_likes @post %> likes </small>
 </p>
 
 <p>

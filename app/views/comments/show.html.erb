@@ -1,4 +1,8 @@
 <p>
   <strong><%= @comment.created_at.strftime('%Y-%m-%d') %></strong>
-  <%= @comment.content %>
+  <%= @comment.content %> | <%= link_to "Like!", [@post, @comment, Like.new], method: :post, class: 'like'
+ %>
+</p>
+<p>
+  <small>"<%= @comment.content %>" has <%= count_likes @comment %> likes </small>
 </p>
