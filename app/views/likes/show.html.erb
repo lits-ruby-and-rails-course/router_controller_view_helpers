@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Likable:</strong>
+  <%= @like.likable_id %>
+</p>
+
+<p>
+  <strong>Likable type:</strong>
+  <%= @like.likable_type %>
+</p>
+
+<%= link_to 'Edit', edit_like_path(@like) %> |
+<%= link_to 'Back', likes_path %>
+
+<p>
+  Likes <%= @post.likes.count %>
+</p>
+
+<p>
+  <%= link_to 'Like', [@post, Like.new], method: :post%>
+</p>  
